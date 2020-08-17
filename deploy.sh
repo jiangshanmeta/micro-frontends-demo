@@ -2,7 +2,7 @@
 set -e
 
 npm run build
-cd dist
+cd dist/micro-frontends-demo
 
 git init
 git add -A

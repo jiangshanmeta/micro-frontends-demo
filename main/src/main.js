@@ -22,7 +22,7 @@ console.log(process.env.NODE_ENV);
 registerMicroApps([
     {
         name: 'app1',
-        entry: isDev ? '//localhost:7000' : './app1.html',
+        entry: isDev ? '//localhost:7000' : '/micro-frontends-demo/app1/index.html',
         container: '#main',
         activeRule (location) {
             return location.hash.slice(1).startsWith('/app1');
@@ -30,7 +30,7 @@ registerMicroApps([
     },
     {
         name: 'app2',
-        entry: isDev ? '//localhost:7001' : './app2.html',
+        entry: isDev ? '//localhost:7001' : '/micro-frontends-demo/app2/index.html',
         container: '#main',
         activeRule (location) {
             return location.hash.slice(1).startsWith('/app2');

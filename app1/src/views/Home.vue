@@ -1,8 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    child home
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    app1 home
   </div>
 </template>
 

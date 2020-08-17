@@ -12,7 +12,8 @@ registerMicroApps([
     {
         // 子应用名称 推荐和子应用目录名称 以及子应用名称(package.json name字段)一致
         name: 'app1',
-        entry: isDev ? '//localhost:7000' : './app1.html',
+        // /micro-frontends-demo是pathname
+        entry: isDev ? '//localhost:7000' : '/micro-frontends-demo/app1/index.html',
         // 挂载点id
         container: '#main',
         activeRule (location) {
@@ -22,7 +23,7 @@ registerMicroApps([
     },
     {
         name: 'app2',
-        entry: isDev ? '//localhost:7001' : './app2.html',
+        entry: isDev ? '//localhost:7001' : '/micro-frontends-demo/app2/index.html',
         container: '#main',
         activeRule (location) {
             return location.hash.slice(1).startsWith('/app2');
@@ -46,12 +47,13 @@ const port = 7000;
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-    // 这里有个坑 子应用和父应用要按相同的打包路径打包在一起 否则路径会出问题
-    outputDir: isDev?'./dist':'../dist',
-    publicPath: './',
+    // 每个子应用构建到自己独立的目录下
+    outputDir: isDev?'./dist':'../dist/micro-frontends-demo/app2',
+    // 写上pathname
+    publicPath: isDev?'./':'/micro-frontends-demo/app2/',
     lintOnSave: false,
     // 和name保持一致
-    indexPath:`${name}.html`,
+    indexPath:`index.html`,
     devServer: {
         hot: true,
         disableHostCheck: true,
@@ -148,8 +150,7 @@ const rimraf = require('rimraf');
 const runAll = require("npm-run-all");
 
 rimraf('dist', ()=>{
-    // 还有点问题 必须要把主应用放在最后
-    // 子应用独立构建后目前会自动删除index.html
+    // 注意主应用构建目录层级 更高一层 主应用构建时不能删除
     runAll([
         'build:app1',
         'build:app2',
