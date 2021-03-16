@@ -1,0 +1,2 @@
+(window["webpackJsonp_app1"]=window["webpackJsonp_app1"]||[]).push([["about"],{f820:function(t,a,n){"use strict";n.r(a);var p=function(){var t=this,a=t.$createElement,n=t._self._c||a;return n("div",{staticClass:"about"},[n("h1",[t._v("app1 about")]),n("button",{on:{click:t.handleClick}},[t._v("跳转到app2 ")])])},e=[],u={methods:{handleClick:function(){this.$router.push("/app2")}}},l=u,o=n("2877"),c=Object(o["a"])(l,p,e,!1,null,null,null);a["default"]=c.exports}}]);
+//# sourceMappingURL=about.922f06a3.js.map
