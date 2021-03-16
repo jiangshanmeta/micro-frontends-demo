@@ -8,7 +8,8 @@
     "build:main": "cd main && npm run build",
     "build:app1": "cd app1 && npm run build",
     "build:app2": "cd app2 && npm run build",
-    "serve":"serve dist"
+    "build:vue3app": "cd vue3app && npm run build",
+    "serve": "serve dist"
   },
   "repository": {
     "type": "git",

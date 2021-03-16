@@ -15,9 +15,16 @@
             <router-link to="/app2">
                 app2
             </router-link> |
+            <router-link to="/vue3app">
+                vue3app
+            </router-link> |
+
+
         </div>
+        
         <router-view />
         <div id="main" />
+        <!-- <div id="v3" /> -->
     </div>
 </template>
 

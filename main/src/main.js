@@ -36,6 +36,15 @@ registerMicroApps([
             return location.hash.slice(1).startsWith('/app2');
         },
     },
+    {
+        name: 'vue3app',
+        entry: isDev ? '//localhost:7002' : '/micro-frontends-demo/vue3app/index.html',
+        container: '#main',
+        activeRule (location) {
+            return location.hash.slice(1).startsWith('/vue3app');
+        },
+    },
+
 ]);
 
 start();

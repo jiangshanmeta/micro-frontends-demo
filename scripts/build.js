@@ -5,6 +5,7 @@ rimraf('dist', ()=>{
     runAll([
         'build:app1',
         'build:app2',
+        'build:vue3app',
         'build:main',
     ])
 })
